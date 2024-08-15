@@ -16,43 +16,43 @@ namespace ABC_Car_Traders
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-
+            // Perform any initialization tasks here if needed
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            // Handle label click event if needed
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            // null  values in username and password fields
-            if (string.IsNullOrWhiteSpace(NameBox.Text))
+            // Check for null values in username and password fields
+            if (string.IsNullOrWhiteSpace(LoginNameBox.Text))
             {
                 MessageBox.Show("Please enter your username.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(PasswordBox.Text))
+            if (string.IsNullOrWhiteSpace(LoginPasswordBox.Text))
             {
                 MessageBox.Show("Please enter your password.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             // Hash the entered password
-            string hashedPassword = HashPassword(PasswordBox.Text);
+            string hashedPassword = HashPassword(LoginPasswordBox.Text);
 
-            // Connect to DB
+            // Connect to the database
             try
             {
                 using (SqlConnection con = new SqlConnection("Data Source=DESKTOP-M9JEPR6\\VS_SERVER;Initial Catalog=\"ABC Car Traders\";Integrated Security=True;TrustServerCertificate=True"))
                 {
                     con.Open();
-                    string query = "SELECT COUNT(*) FROM [customer] WHERE username=@username  password=@password";
+                    string query = "SELECT COUNT(*) FROM [customer] WHERE username=@username AND password=@password";
                     SqlCommand cmd = new SqlCommand(query, con);
-                    cmd.Parameters.AddWithValue("@username", NameBox.Text);
+                    cmd.Parameters.AddWithValue("@username", LoginNameBox.Text);
                     cmd.Parameters.AddWithValue("@password", hashedPassword); // Use the hashed password
-                    int count = (int)cmd.ExecuteScalar(); // Count the login attempts
+                    int count = (int)cmd.ExecuteScalar(); // Count the matching records
 
                     if (count > 0)
                     {
@@ -61,7 +61,7 @@ namespace ABC_Car_Traders
                     }
                     else
                     {
-                        // Login failed message display
+                        // Login failed message
                         MessageBox.Show("Login unsuccessful. Please check your username and password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
@@ -76,24 +76,16 @@ namespace ABC_Car_Traders
             }
         }
 
-
         private void CancelButton_Click(object sender, EventArgs e)
         {
+            // Close the login form
             this.Close();
         }
 
         private void ShowPasswordCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-
-            // password visibility
-            if (ShowPasswordCheckBox.Checked)
-            {
-                PasswordBox.PasswordChar = '\0'; // Show password
-            }
-            else
-            {
-                PasswordBox.PasswordChar = '*'; // Hide password
-            }
+            // Toggle password visibility
+            LoginPasswordBox.PasswordChar = ShowPasswordCheckBox.Checked ? '\0' : '*';
         }
 
         private void PasswordBox_TextChanged(object sender, EventArgs e)
@@ -107,47 +99,36 @@ namespace ABC_Car_Traders
             }
         }
 
-
-
         private void RegisterLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
 
-            // registor link click
+            // Open the registration form
             Registor registerForm = new Registor();
             registerForm.ShowDialog();
+
+            // Show the login form again after registration form is closed
             this.Show();
-
         }
 
-
-        private void NameBox_TextChanged(object sender, EventArgs e)
+        private void LoginChangePWLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            this.Hide(); // Hide the current login form
 
+            ChangePassword changePassword = new ChangePassword(); 
+            changePassword.ShowDialog(); 
+            this.Show(); 
         }
 
-        private void LogoBox_Click(object sender, EventArgs e)
-        {
 
-        }
         private string HashPassword(string password)
         {
-            byte[] data = System.Text.Encoding.UTF8.GetBytes(password);
-            using (var md5 = System.Security.Cryptography.MD5.Create())
+            byte[] data = Encoding.UTF8.GetBytes(password);
+            using (var md5 = MD5.Create())
             {
                 byte[] hash = md5.ComputeHash(data);
                 return Convert.ToBase64String(hash);
             }
-        }
-
-        private void ChangePasswordLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            this.Hide();
-
-            // registor link click
-            ChangePW ChanPW = new ChangePW();
-            ChanPW.ShowDialog();
-            this.Show();
         }
     }
 }

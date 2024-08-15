@@ -189,6 +189,7 @@
             RegistorPasswordTex.Name = "RegistorPasswordTex";
             RegistorPasswordTex.Size = new Size(100, 23);
             RegistorPasswordTex.TabIndex = 15;
+            RegistorPasswordTex.PasswordChar = '*';
             // 
             // RegistorRePasswordTex
             // 
@@ -196,6 +197,7 @@
             RegistorRePasswordTex.Name = "RegistorRePasswordTex";
             RegistorRePasswordTex.Size = new Size(100, 23);
             RegistorRePasswordTex.TabIndex = 16;
+            RegistorRePasswordTex.PasswordChar = '*';
             // 
             // RegistorShowPW
             // 

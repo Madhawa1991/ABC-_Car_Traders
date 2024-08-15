@@ -1,6 +1,6 @@
 ﻿namespace ABC_Car_Traders
 {
-    partial class ChangePW
+    partial class ChangePassword
     {
         /// <summary>
         /// Required designer variable.
@@ -10,7 +10,7 @@
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        //<param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -109,6 +109,7 @@
             ChangePWShowPW.TabIndex = 7;
             ChangePWShowPW.Text = "Show Password";
             ChangePWShowPW.UseVisualStyleBackColor = true;
+            ChangePWShowPW.CheckedChanged += ChangePWShowPW_CheckedChanged;
             // 
             // ChangePWNamelabel
             // 
@@ -144,6 +145,7 @@
             // 
             ChangePWpwBox.Location = new Point(235, 250);
             ChangePWpwBox.Name = "ChangePWpwBox";
+            ChangePWpwBox.PasswordChar = '•';
             ChangePWpwBox.Size = new Size(140, 23);
             ChangePWpwBox.TabIndex = 12;
             // 
@@ -151,6 +153,7 @@
             // 
             ChangePWrepwBox.Location = new Point(235, 286);
             ChangePWrepwBox.Name = "ChangePWrepwBox";
+            ChangePWrepwBox.PasswordChar = '•';
             ChangePWrepwBox.Size = new Size(140, 23);
             ChangePWrepwBox.TabIndex = 13;
             // 
@@ -164,7 +167,7 @@
             ChangePWButton.UseVisualStyleBackColor = true;
             ChangePWButton.Click += ChangePWButton_Click;
             // 
-            // ChangePW
+            // ChangePassword
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -183,8 +186,9 @@
             Controls.Add(ChangePWTelLabel);
             Controls.Add(ChangePWexit);
             Controls.Add(PasswordChange);
-            Name = "ChangePW";
-            Text = "ChangePW";
+            Name = "ChangePassword";
+            Text = "Change Password";
+            Load += ChangePW_Load;
             ResumeLayout(false);
             PerformLayout();
         }

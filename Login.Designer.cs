@@ -33,12 +33,12 @@
             LoginButton = new Button();
             CancelButton = new Button();
             ShowPasswordCheckBox = new CheckBox();
-            PasswordBox = new TextBox();
-            NameBox = new TextBox();
-            ChangePasswordLink = new LinkLabel();
+            LoginPasswordBox = new TextBox();
             nameLabel = new Label();
-            RegisterLink = new LinkLabel();
+            LoginRegisterLink = new LinkLabel();
             LogoBox = new PictureBox();
+            LoginChangePW = new LinkLabel();
+            LoginNameBox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)LogoBox).BeginInit();
             SuspendLayout();
             // 
@@ -55,7 +55,7 @@
             // LoginButton
             // 
             LoginButton.BackColor = Color.DeepSkyBlue;
-            LoginButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LoginButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             LoginButton.ForeColor = SystemColors.ActiveCaptionText;
             LoginButton.Location = new Point(361, 119);
             LoginButton.Name = "LoginButton";
@@ -68,7 +68,7 @@
             // CancelButton
             // 
             CancelButton.BackColor = Color.DeepSkyBlue;
-            CancelButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CancelButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             CancelButton.ForeColor = SystemColors.ActiveCaptionText;
             CancelButton.Location = new Point(361, 151);
             CancelButton.Name = "CancelButton";
@@ -81,7 +81,7 @@
             // ShowPasswordCheckBox
             // 
             ShowPasswordCheckBox.AutoSize = true;
-            ShowPasswordCheckBox.Font = new Font("Segoe UI", 8.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            ShowPasswordCheckBox.Font = new Font("Segoe UI", 8.25F, FontStyle.Italic);
             ShowPasswordCheckBox.Location = new Point(418, 95);
             ShowPasswordCheckBox.Name = "ShowPasswordCheckBox";
             ShowPasswordCheckBox.Size = new Size(98, 17);
@@ -90,35 +90,14 @@
             ShowPasswordCheckBox.UseVisualStyleBackColor = true;
             ShowPasswordCheckBox.CheckedChanged += ShowPasswordCheckBox_CheckedChanged;
             // 
-            // PasswordBox
+            // LoginPasswordBox
             // 
-            PasswordBox.Location = new Point(321, 66);
-            PasswordBox.Name = "PasswordBox";
-            PasswordBox.PasswordChar = '*';
-            PasswordBox.Size = new Size(195, 23);
-            PasswordBox.TabIndex = 6;
-            PasswordBox.UseSystemPasswordChar = true;
-            PasswordBox.TextChanged += PasswordBox_TextChanged;
-            // 
-            // NameBox
-            // 
-            NameBox.Location = new Point(321, 28);
-            NameBox.Name = "NameBox";
-            NameBox.Size = new Size(195, 23);
-            NameBox.TabIndex = 7;
-            NameBox.TextChanged += NameBox_TextChanged;
-            // 
-            // ChangePasswordLink
-            // 
-            ChangePasswordLink.AutoSize = true;
-            ChangePasswordLink.LinkColor = Color.DarkCyan;
-            ChangePasswordLink.Location = new Point(311, 97);
-            ChangePasswordLink.Name = "ChangePasswordLink";
-            ChangePasswordLink.Size = new Size(101, 15);
-            ChangePasswordLink.TabIndex = 8;
-            ChangePasswordLink.TabStop = true;
-            ChangePasswordLink.Text = "Change Password";
-            ChangePasswordLink.LinkClicked += ChangePasswordLink_LinkClicked;
+            LoginPasswordBox.Location = new Point(321, 66);
+            LoginPasswordBox.Name = "LoginPasswordBox";
+            LoginPasswordBox.PasswordChar = '*';
+            LoginPasswordBox.Size = new Size(195, 23);
+            LoginPasswordBox.TabIndex = 6;
+            LoginPasswordBox.TextChanged += PasswordBox_TextChanged;
             // 
             // nameLabel
             // 
@@ -131,17 +110,17 @@
             nameLabel.Text = "Name :";
             nameLabel.Click += label1_Click;
             // 
-            // RegisterLink
+            // LoginRegisterLink
             // 
-            RegisterLink.AutoSize = true;
-            RegisterLink.LinkColor = Color.DarkCyan;
-            RegisterLink.Location = new Point(361, 181);
-            RegisterLink.Name = "RegisterLink";
-            RegisterLink.Size = new Size(113, 15);
-            RegisterLink.TabIndex = 9;
-            RegisterLink.TabStop = true;
-            RegisterLink.Text = "Register as new user";
-            RegisterLink.LinkClicked += RegisterLink_LinkClicked;
+            LoginRegisterLink.AutoSize = true;
+            LoginRegisterLink.LinkColor = Color.DarkCyan;
+            LoginRegisterLink.Location = new Point(361, 181);
+            LoginRegisterLink.Name = "LoginRegisterLink";
+            LoginRegisterLink.Size = new Size(113, 15);
+            LoginRegisterLink.TabIndex = 9;
+            LoginRegisterLink.TabStop = true;
+            LoginRegisterLink.Text = "Register as new user";
+            LoginRegisterLink.LinkClicked += RegisterLink_LinkClicked;
             // 
             // LogoBox
             // 
@@ -151,7 +130,25 @@
             LogoBox.Size = new Size(220, 176);
             LogoBox.TabIndex = 10;
             LogoBox.TabStop = false;
-            LogoBox.Click += LogoBox_Click;
+            // 
+            // LoginChangePW
+            // 
+            LoginChangePW.AutoSize = true;
+            LoginChangePW.LinkColor = Color.Teal;
+            LoginChangePW.Location = new Point(311, 95);
+            LoginChangePW.Name = "LoginChangePW";
+            LoginChangePW.Size = new Size(101, 15);
+            LoginChangePW.TabIndex = 11;
+            LoginChangePW.TabStop = true;
+            LoginChangePW.Text = "Change Password";
+            LoginChangePW.LinkClicked += LoginChangePWLink_LinkClicked;
+            // 
+            // LoginNameBox
+            // 
+            LoginNameBox.Location = new Point(321, 28);
+            LoginNameBox.Name = "LoginNameBox";
+            LoginNameBox.Size = new Size(195, 23);
+            LoginNameBox.TabIndex = 7;
             // 
             // LoginForm
             // 
@@ -159,11 +156,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(566, 207);
+            Controls.Add(LoginChangePW);
             Controls.Add(LogoBox);
-            Controls.Add(RegisterLink);
-            Controls.Add(ChangePasswordLink);
-            Controls.Add(NameBox);
-            Controls.Add(PasswordBox);
+            Controls.Add(LoginRegisterLink);
+            Controls.Add(LoginNameBox);
+            Controls.Add(LoginPasswordBox);
             Controls.Add(ShowPasswordCheckBox);
             Controls.Add(CancelButton);
             Controls.Add(LoginButton);
@@ -179,15 +176,15 @@
 
         #endregion
 
-        private Label nameLabel;
-        private Button LoginButton;
-        private Button CancelButton;
-        private CheckBox ShowPasswordCheckBox;
-        private TextBox PasswordBox;
-        private TextBox NameBox;
-        private LinkLabel ChangePasswordLink;
-        private LinkLabel RegisterLink;
-        private Label PaswordLabel;
-        private PictureBox LogoBox;
+        private System.Windows.Forms.Label nameLabel;
+        private System.Windows.Forms.Button LoginButton;
+        private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.CheckBox ShowPasswordCheckBox;
+        private System.Windows.Forms.TextBox LoginPasswordBox;
+        private System.Windows.Forms.LinkLabel LoginRegisterLink;
+        private System.Windows.Forms.Label PaswordLabel;
+        private System.Windows.Forms.PictureBox LogoBox;
+        private System.Windows.Forms.LinkLabel LoginChangePW;
+        private System.Windows.Forms.TextBox LoginNameBox;
     }
 }
