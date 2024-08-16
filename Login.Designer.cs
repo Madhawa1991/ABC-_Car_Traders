@@ -39,6 +39,7 @@
             LogoBox = new PictureBox();
             LoginChangePW = new LinkLabel();
             LoginNameBox = new TextBox();
+            TemporyPagetestButon = new Button();
             ((System.ComponentModel.ISupportInitialize)LogoBox).BeginInit();
             SuspendLayout();
             // 
@@ -76,6 +77,7 @@
             CancelButton.TabIndex = 4;
             CancelButton.Text = "Cancel";
             CancelButton.UseVisualStyleBackColor = false;
+            CancelButton.Click += CancelButton_Click_1;
             // 
             // ShowPasswordCheckBox
             // 
@@ -148,12 +150,23 @@
             LoginNameBox.Size = new Size(195, 23);
             LoginNameBox.TabIndex = 7;
             // 
+            // TemporyPagetestButon
+            // 
+            TemporyPagetestButon.Location = new Point(237, 129);
+            TemporyPagetestButon.Name = "TemporyPagetestButon";
+            TemporyPagetestButon.Size = new Size(75, 23);
+            TemporyPagetestButon.TabIndex = 12;
+            TemporyPagetestButon.Text = "Page test";
+            TemporyPagetestButon.UseVisualStyleBackColor = true;
+            TemporyPagetestButon.Click += TemporyPagetestButon_Click;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(566, 207);
+            Controls.Add(TemporyPagetestButon);
             Controls.Add(LoginChangePW);
             Controls.Add(LogoBox);
             Controls.Add(LoginRegisterLink);
@@ -184,5 +197,6 @@
         private System.Windows.Forms.PictureBox LogoBox;
         private System.Windows.Forms.LinkLabel LoginChangePW;
         private System.Windows.Forms.TextBox LoginNameBox;
+        private Button TemporyPagetestButon;
     }
 }

@@ -144,17 +144,7 @@ namespace ABC_Car_Traders
             }
         }
 
-        private void InitializeComponent()
-        {
-            SuspendLayout();
-            // 
-            // Registor
-            // 
-            ClientSize = new Size(706, 399);
-            Name = "Registor";
-            Load += Registor_Load;
-            ResumeLayout(false);
-        }
+
 
         private void Registor_Load(object sender, EventArgs e)
         {

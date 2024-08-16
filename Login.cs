@@ -43,21 +43,45 @@ namespace ABC_Car_Traders
             string hashedPassword = HashPassword(LoginPasswordBox.Text);
 
             // Connect to the database
+
             try
             {
                 using (SqlConnection con = new SqlConnection("Data Source=DESKTOP-M9JEPR6\\VS_SERVER;Initial Catalog=\"ABC Car Traders\";Integrated Security=True;TrustServerCertificate=True"))
                 {
                     con.Open();
-                    string query = "SELECT COUNT(*) FROM [customer] WHERE username=@username AND password=@password";
+
+                    // Query to fetch role based on username and password
+                    string query = "SELECT [role] FROM [customer] WHERE username=@username AND password=@password";
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.Parameters.AddWithValue("@username", LoginNameBox.Text);
                     cmd.Parameters.AddWithValue("@password", hashedPassword); // Use the hashed password
-                    int count = (int)cmd.ExecuteScalar(); // Count the matching records
 
-                    if (count > 0)
+                    // Execute the query and get the role
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null)
                     {
-                        // Successfully logged in message
-                        MessageBox.Show("You have successfully logged in.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        string role = result.ToString();
+
+                        // Display message based on role
+                        if (role == "Customer")
+                        {
+                            MessageBox.Show("Welcome, Customer!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else if (role == "Admin")
+                        {
+                            MessageBox.Show("Welcome, Admin!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            //after poup message load admin page
+                            AdminHome adminForm = new AdminHome();
+                            adminForm.ShowDialog();
+                            this.Close();
+
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Welcome, User!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                     else
                     {
@@ -115,9 +139,9 @@ namespace ABC_Car_Traders
         {
             this.Hide(); // Hide the current login form
 
-            ChangePassword changePassword = new ChangePassword(); 
-            changePassword.ShowDialog(); 
-            this.Show(); 
+            ChangePassword changePassword = new ChangePassword();
+            changePassword.ShowDialog();
+            this.Show();
         }
 
 
@@ -129,6 +153,19 @@ namespace ABC_Car_Traders
                 byte[] hash = md5.ComputeHash(data);
                 return Convert.ToBase64String(hash);
             }
+        }
+
+        private void CancelButton_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void TemporyPagetestButon_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminAddItem adminAddItem = new AdminAddItem();
+            adminAddItem.ShowDialog();
+            this.Show();
         }
     }
 }
