@@ -76,7 +76,6 @@
             CancelButton.TabIndex = 4;
             CancelButton.Text = "Cancel";
             CancelButton.UseVisualStyleBackColor = false;
-            CancelButton.Click += CancelButton_Click;
             // 
             // ShowPasswordCheckBox
             // 
@@ -97,7 +96,6 @@
             LoginPasswordBox.PasswordChar = '*';
             LoginPasswordBox.Size = new Size(195, 23);
             LoginPasswordBox.TabIndex = 6;
-            LoginPasswordBox.TextChanged += PasswordBox_TextChanged;
             // 
             // nameLabel
             // 

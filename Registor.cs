@@ -102,7 +102,7 @@ namespace ABC_Car_Traders
                     cmd.Parameters.AddWithValue("@username", RegistorNameTex.Text);
                     cmd.Parameters.AddWithValue("@password", EncryptPassword(RegistorPasswordTex.Text)); // Encrypt the password 
                     cmd.Parameters.AddWithValue("@NIC", RegistorNICTex.Text);
-                    cmd.Parameters.AddWithValue("@address",(RegistorAddressTex.Text));
+                    cmd.Parameters.AddWithValue("@address", (RegistorAddressTex.Text));
                     cmd.Parameters.AddWithValue("@telephone", RegistorTelephoneTex.Text);
                     cmd.Parameters.AddWithValue("@email", LoginEmailText.Text);
                     cmd.Parameters.AddWithValue("@Role", "Customer");//default customer
@@ -142,6 +142,23 @@ namespace ABC_Car_Traders
                 byte[] hash = md5.ComputeHash(data);
                 return Convert.ToBase64String(hash);
             }
+        }
+
+        private void InitializeComponent()
+        {
+            SuspendLayout();
+            // 
+            // Registor
+            // 
+            ClientSize = new Size(706, 399);
+            Name = "Registor";
+            Load += Registor_Load;
+            ResumeLayout(false);
+        }
+
+        private void Registor_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
