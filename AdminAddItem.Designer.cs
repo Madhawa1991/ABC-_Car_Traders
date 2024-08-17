@@ -68,7 +68,7 @@
             lblItemCode.AutoSize = true;
             lblItemCode.Location = new Point(20, 20);
             lblItemCode.Name = "lblItemCode";
-            lblItemCode.Size = new Size(65, 15);
+            lblItemCode.Size = new Size(81, 20);
             lblItemCode.TabIndex = 0;
             lblItemCode.Text = "Item Code:";
             // 
@@ -77,7 +77,7 @@
             AddItemNameBox.Location = new Point(306, 48);
             AddItemNameBox.Name = "AddItemNameBox";
             AddItemNameBox.PlaceholderText = "Item Name";
-            AddItemNameBox.Size = new Size(200, 23);
+            AddItemNameBox.Size = new Size(200, 27);
             AddItemNameBox.TabIndex = 1;
             // 
             // AddItemPriceBox
@@ -86,7 +86,7 @@
             AddItemPriceBox.Location = new Point(306, 77);
             AddItemPriceBox.Maximum = new decimal(new int[] { 100000000, 0, 0, 0 });
             AddItemPriceBox.Name = "AddItemPriceBox";
-            AddItemPriceBox.Size = new Size(200, 23);
+            AddItemPriceBox.Size = new Size(200, 27);
             AddItemPriceBox.TabIndex = 2;
             // 
             // AddItemModelYearBox
@@ -95,7 +95,7 @@
             AddItemModelYearBox.Maximum = new decimal(new int[] { 2024, 0, 0, 0 });
             AddItemModelYearBox.Minimum = new decimal(new int[] { 1900, 0, 0, 0 });
             AddItemModelYearBox.Name = "AddItemModelYearBox";
-            AddItemModelYearBox.Size = new Size(200, 23);
+            AddItemModelYearBox.Size = new Size(200, 27);
             AddItemModelYearBox.TabIndex = 3;
             AddItemModelYearBox.Value = new decimal(new int[] { 1970, 0, 0, 0 });
             // 
@@ -105,7 +105,7 @@
             AddItemBrandNamecmb.Items.AddRange(new object[] { "Toyota", "Ford", "BMW" });
             AddItemBrandNamecmb.Location = new Point(306, 138);
             AddItemBrandNamecmb.Name = "AddItemBrandNamecmb";
-            AddItemBrandNamecmb.Size = new Size(200, 23);
+            AddItemBrandNamecmb.Size = new Size(200, 28);
             AddItemBrandNamecmb.TabIndex = 4;
             // 
             // AddItemTypecmb
@@ -114,7 +114,7 @@
             AddItemTypecmb.Items.AddRange(new object[] { "Car", "Van", "Bus", "Lorry" });
             AddItemTypecmb.Location = new Point(306, 172);
             AddItemTypecmb.Name = "AddItemTypecmb";
-            AddItemTypecmb.Size = new Size(200, 23);
+            AddItemTypecmb.Size = new Size(200, 28);
             AddItemTypecmb.TabIndex = 5;
             // 
             // cmbPriceRange
@@ -123,7 +123,7 @@
             cmbPriceRange.Items.AddRange(new object[] { "1-1,000,000", "1,000,001-2,500,000", "2,500,001-5,000,000", "5,000,001-10,000,000", "10,000,001-50,000,000", "50,000,000<" });
             cmbPriceRange.Location = new Point(306, 213);
             cmbPriceRange.Name = "cmbPriceRange";
-            cmbPriceRange.Size = new Size(200, 23);
+            cmbPriceRange.Size = new Size(200, 28);
             cmbPriceRange.TabIndex = 6;
             // 
             // cmbCondition
@@ -132,7 +132,7 @@
             cmbCondition.Items.AddRange(new object[] { "Brand New", "Used" });
             cmbCondition.Location = new Point(306, 257);
             cmbCondition.Name = "cmbCondition";
-            cmbCondition.Size = new Size(200, 23);
+            cmbCondition.Size = new Size(200, 28);
             cmbCondition.TabIndex = 7;
             // 
             // cmbFuelType
@@ -141,7 +141,7 @@
             cmbFuelType.Items.AddRange(new object[] { "Petrol", "Diesel" });
             cmbFuelType.Location = new Point(306, 299);
             cmbFuelType.Name = "cmbFuelType";
-            cmbFuelType.Size = new Size(200, 23);
+            cmbFuelType.Size = new Size(200, 28);
             cmbFuelType.TabIndex = 8;
             // 
             // cmbStates
@@ -150,14 +150,14 @@
             cmbStates.Items.AddRange(new object[] { "Available", "Reserved", "Sold" });
             cmbStates.Location = new Point(306, 338);
             cmbStates.Name = "cmbStates";
-            cmbStates.Size = new Size(200, 23);
+            cmbStates.Size = new Size(200, 28);
             cmbStates.TabIndex = 9;
             // 
             // numMileage
             // 
             numMileage.Location = new Point(306, 375);
             numMileage.Name = "numMileage";
-            numMileage.Size = new Size(200, 23);
+            numMileage.Size = new Size(200, 27);
             numMileage.TabIndex = 10;
             // 
             // btnSave
@@ -180,7 +180,7 @@
             // 
             dateTimePicker1.Location = new Point(531, 12);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
+            dateTimePicker1.Size = new Size(200, 27);
             dateTimePicker1.TabIndex = 13;
             // 
             // AddItemVehicleradioButton
@@ -188,7 +188,7 @@
             AddItemVehicleradioButton.AutoSize = true;
             AddItemVehicleradioButton.Location = new Point(320, 16);
             AddItemVehicleradioButton.Name = "AddItemVehicleradioButton";
-            AddItemVehicleradioButton.Size = new Size(62, 19);
+            AddItemVehicleradioButton.Size = new Size(74, 24);
             AddItemVehicleradioButton.TabIndex = 14;
             AddItemVehicleradioButton.TabStop = true;
             AddItemVehicleradioButton.Text = "Vehicle";
@@ -199,7 +199,7 @@
             AddradioButton1.AutoSize = true;
             AddradioButton1.Location = new Point(399, 16);
             AddradioButton1.Name = "AddradioButton1";
-            AddradioButton1.Size = new Size(46, 19);
+            AddradioButton1.Size = new Size(52, 24);
             AddradioButton1.TabIndex = 15;
             AddradioButton1.TabStop = true;
             AddradioButton1.Text = "Part";
@@ -210,7 +210,7 @@
             AddItemNameTex.AutoSize = true;
             AddItemNameTex.Location = new Point(221, 51);
             AddItemNameTex.Name = "AddItemNameTex";
-            AddItemNameTex.Size = new Size(72, 15);
+            AddItemNameTex.Size = new Size(90, 20);
             AddItemNameTex.TabIndex = 16;
             AddItemNameTex.Text = "Item Name :";
             // 
@@ -219,7 +219,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(221, 79);
             label1.Name = "label1";
-            label1.Size = new Size(66, 15);
+            label1.Size = new Size(82, 20);
             label1.TabIndex = 17;
             label1.Text = "Item Price :";
             // 
@@ -228,7 +228,7 @@
             AddItemPriceTex.AutoSize = true;
             AddItemPriceTex.Location = new Point(221, 108);
             AddItemPriceTex.Name = "AddItemPriceTex";
-            AddItemPriceTex.Size = new Size(39, 15);
+            AddItemPriceTex.Size = new Size(48, 20);
             AddItemPriceTex.TabIndex = 18;
             AddItemPriceTex.Text = "Price :";
             // 
@@ -237,7 +237,7 @@
             AddItemBrandTex.AutoSize = true;
             AddItemBrandTex.Location = new Point(221, 141);
             AddItemBrandTex.Name = "AddItemBrandTex";
-            AddItemBrandTex.Size = new Size(44, 15);
+            AddItemBrandTex.Size = new Size(55, 20);
             AddItemBrandTex.TabIndex = 19;
             AddItemBrandTex.Text = "Brand :";
             // 
@@ -246,7 +246,7 @@
             AddItemTypeTex.AutoSize = true;
             AddItemTypeTex.Location = new Point(221, 175);
             AddItemTypeTex.Name = "AddItemTypeTex";
-            AddItemTypeTex.Size = new Size(37, 15);
+            AddItemTypeTex.Size = new Size(47, 20);
             AddItemTypeTex.TabIndex = 20;
             AddItemTypeTex.Text = "Type :";
             // 
@@ -255,7 +255,7 @@
             AddItemPriceRangeTex.AutoSize = true;
             AddItemPriceRangeTex.Location = new Point(218, 216);
             AddItemPriceRangeTex.Name = "AddItemPriceRangeTex";
-            AddItemPriceRangeTex.Size = new Size(75, 15);
+            AddItemPriceRangeTex.Size = new Size(94, 20);
             AddItemPriceRangeTex.TabIndex = 21;
             AddItemPriceRangeTex.Text = "Price Range :";
             // 
@@ -264,7 +264,7 @@
             AddItemConditionTex.AutoSize = true;
             AddItemConditionTex.Location = new Point(221, 260);
             AddItemConditionTex.Name = "AddItemConditionTex";
-            AddItemConditionTex.Size = new Size(66, 15);
+            AddItemConditionTex.Size = new Size(81, 20);
             AddItemConditionTex.TabIndex = 22;
             AddItemConditionTex.Text = "Condition :";
             // 
@@ -273,7 +273,7 @@
             label7.AutoSize = true;
             label7.Location = new Point(221, 302);
             label7.Name = "label7";
-            label7.Size = new Size(38, 15);
+            label7.Size = new Size(50, 20);
             label7.TabIndex = 23;
             label7.Text = "label1";
             // 
@@ -282,7 +282,7 @@
             label8.AutoSize = true;
             label8.Location = new Point(221, 338);
             label8.Name = "label8";
-            label8.Size = new Size(38, 15);
+            label8.Size = new Size(50, 20);
             label8.TabIndex = 24;
             label8.Text = "label1";
             // 
@@ -291,7 +291,7 @@
             label9.AutoSize = true;
             label9.Location = new Point(221, 377);
             label9.Name = "label9";
-            label9.Size = new Size(38, 15);
+            label9.Size = new Size(50, 20);
             label9.TabIndex = 25;
             label9.Text = "label1";
             // 
@@ -316,7 +316,7 @@
             label10.AutoSize = true;
             label10.Location = new Point(592, 338);
             label10.Name = "label10";
-            label10.Size = new Size(38, 15);
+            label10.Size = new Size(50, 20);
             label10.TabIndex = 28;
             label10.Text = "label1";
             // 
@@ -354,6 +354,7 @@
             Controls.Add(btnCancel);
             Name = "AdminAddItem";
             Text = "Add Item";
+            Load += AdminAddItem_Load;
             ((System.ComponentModel.ISupportInitialize)AddItemPriceBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)AddItemModelYearBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)numMileage).EndInit();

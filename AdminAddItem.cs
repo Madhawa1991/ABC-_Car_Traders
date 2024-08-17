@@ -17,9 +17,14 @@ namespace ABC_Car_Traders
             InitializeComponent();
         }
 
-       // private void InitializeComponent()
-        
+        private void AdminAddItem_Load(object sender, EventArgs e)
+        {
 
         }
+
+        // private void InitializeComponent()
+
+
     }
+}
 
