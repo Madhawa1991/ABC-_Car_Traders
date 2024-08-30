@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ABC Car Traders")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+191d8b0edd6e5489bfc5a921aa56f030b21c6d22")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+60969b2b48ba3a1e46c16c151d4d7bfd5d00bca7")]
 [assembly: System.Reflection.AssemblyProductAttribute("ABC Car Traders")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ABC Car Traders")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
