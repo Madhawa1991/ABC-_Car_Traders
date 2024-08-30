@@ -20,8 +20,6 @@
             base.Dispose(disposing);
         }
 
-        //comment
-
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -30,62 +28,53 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblItemCode = new Label();
             AddItemNameBox = new TextBox();
             AddItemPriceBox = new NumericUpDown();
             AddItemModelYearBox = new NumericUpDown();
             AddItemBrandNamecmb = new ComboBox();
             AddItemTypecmb = new ComboBox();
-            cmbPriceRange = new ComboBox();
-            cmbCondition = new ComboBox();
-            cmbFuelType = new ComboBox();
-            cmbStates = new ComboBox();
-            numMileage = new NumericUpDown();
-            btnSave = new Button();
-            btnCancel = new Button();
-            dateTimePicker1 = new DateTimePicker();
+            AddItemPriceRangecmb = new ComboBox();
+            AddItemConditioncmb = new ComboBox();
+            AddItemFuelTypecmb = new ComboBox();
+            AddItemStatuscmb = new ComboBox();
+            AddItemMileageBoxcmb = new NumericUpDown();
+            AddItemSaveButton = new Button();
+            AddItemCanselBtn = new Button();
             AddItemVehicleradioButton = new RadioButton();
-            AddradioButton1 = new RadioButton();
+            AddItemPartRadioButton = new RadioButton();
             AddItemNameTex = new Label();
-            label1 = new Label();
-            AddItemPriceTex = new Label();
+            AddItemPriceTxt = new Label();
+            AddItemYearTex = new Label();
             AddItemBrandTex = new Label();
             AddItemTypeTex = new Label();
             AddItemPriceRangeTex = new Label();
             AddItemConditionTex = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            label9 = new Label();
-            button1 = new Button();
-            pictureBox1 = new PictureBox();
-            label10 = new Label();
+            AddItemFuelTex = new Label();
+            AddItemStatusTex = new Label();
+            AddItemMiageTex = new Label();
+            AddItemPicUploadbtn = new Button();
+            AddItempicture = new PictureBox();
+            AddItemDescriptionTxt = new Label();
+            AddItemDescriptionBox = new TextBox();
+            AddItemClearBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)AddItemPriceBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)AddItemModelYearBox).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numMileage).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)AddItemMileageBoxcmb).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)AddItempicture).BeginInit();
             SuspendLayout();
-            // 
-            // lblItemCode
-            // 
-            lblItemCode.AutoSize = true;
-            lblItemCode.Location = new Point(20, 20);
-            lblItemCode.Name = "lblItemCode";
-            lblItemCode.Size = new Size(81, 20);
-            lblItemCode.TabIndex = 0;
-            lblItemCode.Text = "Item Code:";
             // 
             // AddItemNameBox
             // 
-            AddItemNameBox.Location = new Point(306, 48);
+            AddItemNameBox.Location = new Point(149, 75);
             AddItemNameBox.Name = "AddItemNameBox";
             AddItemNameBox.PlaceholderText = "Item Name";
-            AddItemNameBox.Size = new Size(200, 27);
+            AddItemNameBox.Size = new Size(362, 27);
             AddItemNameBox.TabIndex = 1;
             // 
             // AddItemPriceBox
             // 
             AddItemPriceBox.DecimalPlaces = 2;
-            AddItemPriceBox.Location = new Point(306, 77);
+            AddItemPriceBox.Location = new Point(150, 110);
             AddItemPriceBox.Maximum = new decimal(new int[] { 100000000, 0, 0, 0 });
             AddItemPriceBox.Name = "AddItemPriceBox";
             AddItemPriceBox.Size = new Size(200, 27);
@@ -93,9 +82,9 @@
             // 
             // AddItemModelYearBox
             // 
-            AddItemModelYearBox.Location = new Point(306, 106);
+            AddItemModelYearBox.Location = new Point(149, 152);
             AddItemModelYearBox.Maximum = new decimal(new int[] { 2024, 0, 0, 0 });
-            AddItemModelYearBox.Minimum = new decimal(new int[] { 1900, 0, 0, 0 });
+            AddItemModelYearBox.Minimum = new decimal(new int[] { 1970, 0, 0, 0 });
             AddItemModelYearBox.Name = "AddItemModelYearBox";
             AddItemModelYearBox.Size = new Size(200, 27);
             AddItemModelYearBox.TabIndex = 3;
@@ -104,8 +93,8 @@
             // AddItemBrandNamecmb
             // 
             AddItemBrandNamecmb.DropDownStyle = ComboBoxStyle.DropDownList;
-            AddItemBrandNamecmb.Items.AddRange(new object[] { "Toyota", "Ford", "BMW" });
-            AddItemBrandNamecmb.Location = new Point(306, 138);
+            AddItemBrandNamecmb.Items.AddRange(new object[] { "", "Toyota", "Honda", "Tata", "Ford", "BMW", "Audi", "Nissan", "Suzuki", "Jaguar", "Subaru", "Mazda" });
+            AddItemBrandNamecmb.Location = new Point(149, 193);
             AddItemBrandNamecmb.Name = "AddItemBrandNamecmb";
             AddItemBrandNamecmb.Size = new Size(200, 28);
             AddItemBrandNamecmb.TabIndex = 4;
@@ -113,293 +102,332 @@
             // AddItemTypecmb
             // 
             AddItemTypecmb.DropDownStyle = ComboBoxStyle.DropDownList;
-            AddItemTypecmb.Items.AddRange(new object[] { "Car", "Van", "Bus", "Lorry" });
-            AddItemTypecmb.Location = new Point(306, 172);
+            AddItemTypecmb.Items.AddRange(new object[] { "", "Car", "Van", "Bus", "Lorry" });
+            AddItemTypecmb.Location = new Point(149, 234);
             AddItemTypecmb.Name = "AddItemTypecmb";
             AddItemTypecmb.Size = new Size(200, 28);
             AddItemTypecmb.TabIndex = 5;
             // 
-            // cmbPriceRange
+            // AddItemPriceRangecmb
             // 
-            cmbPriceRange.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbPriceRange.Items.AddRange(new object[] { "1-1,000,000", "1,000,001-2,500,000", "2,500,001-5,000,000", "5,000,001-10,000,000", "10,000,001-50,000,000", "50,000,000<" });
-            cmbPriceRange.Location = new Point(306, 213);
-            cmbPriceRange.Name = "cmbPriceRange";
-            cmbPriceRange.Size = new Size(200, 28);
-            cmbPriceRange.TabIndex = 6;
+            AddItemPriceRangecmb.DropDownStyle = ComboBoxStyle.DropDownList;
+            AddItemPriceRangecmb.Items.AddRange(new object[] { "", "1-10,000", "10,001-50,000", "50,001-100,000", "100,001-250,000", "250,001-500,000", "500,001-1,000,001", "1,000,001-2,500,000", "2,500,001-5,000,000", "5,000,001-10,000,000", "10,000,001-50,000,000", "50,000,000<" });
+            AddItemPriceRangecmb.Location = new Point(149, 277);
+            AddItemPriceRangecmb.Name = "AddItemPriceRangecmb";
+            AddItemPriceRangecmb.Size = new Size(200, 28);
+            AddItemPriceRangecmb.TabIndex = 6;
             // 
-            // cmbCondition
+            // AddItemConditioncmb
             // 
-            cmbCondition.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbCondition.Items.AddRange(new object[] { "Brand New", "Used" });
-            cmbCondition.Location = new Point(306, 257);
-            cmbCondition.Name = "cmbCondition";
-            cmbCondition.Size = new Size(200, 28);
-            cmbCondition.TabIndex = 7;
+            AddItemConditioncmb.DropDownStyle = ComboBoxStyle.DropDownList;
+            AddItemConditioncmb.Items.AddRange(new object[] { "", "Brand New", "Used" });
+            AddItemConditioncmb.Location = new Point(149, 321);
+            AddItemConditioncmb.Name = "AddItemConditioncmb";
+            AddItemConditioncmb.Size = new Size(200, 28);
+            AddItemConditioncmb.TabIndex = 7;
             // 
-            // cmbFuelType
+            // AddItemFuelTypecmb
             // 
-            cmbFuelType.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbFuelType.Items.AddRange(new object[] { "Petrol", "Diesel" });
-            cmbFuelType.Location = new Point(306, 299);
-            cmbFuelType.Name = "cmbFuelType";
-            cmbFuelType.Size = new Size(200, 28);
-            cmbFuelType.TabIndex = 8;
+            AddItemFuelTypecmb.DropDownStyle = ComboBoxStyle.DropDownList;
+            AddItemFuelTypecmb.Items.AddRange(new object[] { "", "Petrol", "Diesel", "Hybrid", "Eletric" });
+            AddItemFuelTypecmb.Location = new Point(149, 368);
+            AddItemFuelTypecmb.Name = "AddItemFuelTypecmb";
+            AddItemFuelTypecmb.Size = new Size(200, 28);
+            AddItemFuelTypecmb.TabIndex = 8;
             // 
-            // cmbStates
+            // AddItemStatuscmb
             // 
-            cmbStates.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbStates.Items.AddRange(new object[] { "Available", "Reserved", "Sold" });
-            cmbStates.Location = new Point(306, 338);
-            cmbStates.Name = "cmbStates";
-            cmbStates.Size = new Size(200, 28);
-            cmbStates.TabIndex = 9;
+            AddItemStatuscmb.DropDownStyle = ComboBoxStyle.DropDownList;
+            AddItemStatuscmb.Items.AddRange(new object[] { "", "Available", "Reserved", "Sold" });
+            AddItemStatuscmb.Location = new Point(149, 417);
+            AddItemStatuscmb.Name = "AddItemStatuscmb";
+            AddItemStatuscmb.Size = new Size(200, 28);
+            AddItemStatuscmb.TabIndex = 9;
             // 
-            // numMileage
+            // AddItemMileageBoxcmb
             // 
-            numMileage.Location = new Point(306, 375);
-            numMileage.Name = "numMileage";
-            numMileage.Size = new Size(200, 27);
-            numMileage.TabIndex = 10;
+            AddItemMileageBoxcmb.Location = new Point(149, 466);
+            AddItemMileageBoxcmb.Maximum = new decimal(new int[] { 10000000, 0, 0, 0 });
+            AddItemMileageBoxcmb.Name = "AddItemMileageBoxcmb";
+            AddItemMileageBoxcmb.Size = new Size(200, 27);
+            AddItemMileageBoxcmb.TabIndex = 10;
             // 
-            // btnSave
+            // AddItemSaveButton
             // 
-            btnSave.Location = new Point(306, 442);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new Size(75, 23);
-            btnSave.TabIndex = 11;
-            btnSave.Text = "Save";
+            AddItemSaveButton.BackColor = Color.FromArgb(0, 192, 0);
+            AddItemSaveButton.Font = new Font("Segoe UI", 10.18868F, FontStyle.Bold);
+            AddItemSaveButton.Location = new Point(529, 570);
+            AddItemSaveButton.Name = "AddItemSaveButton";
+            AddItemSaveButton.Size = new Size(88, 37);
+            AddItemSaveButton.TabIndex = 11;
+            AddItemSaveButton.Text = "Save";
+            AddItemSaveButton.UseVisualStyleBackColor = false;
+            AddItemSaveButton.Click += AddItemSaveButton_Click;
             // 
-            // btnCancel
+            // AddItemCanselBtn
             // 
-            btnCancel.Location = new Point(468, 442);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(75, 23);
-            btnCancel.TabIndex = 12;
-            btnCancel.Text = "Cancel";
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(531, 12);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 27);
-            dateTimePicker1.TabIndex = 13;
+            AddItemCanselBtn.BackColor = Color.Red;
+            AddItemCanselBtn.Font = new Font("Segoe UI", 10.18868F, FontStyle.Bold);
+            AddItemCanselBtn.Location = new Point(717, 570);
+            AddItemCanselBtn.Name = "AddItemCanselBtn";
+            AddItemCanselBtn.Size = new Size(82, 37);
+            AddItemCanselBtn.TabIndex = 12;
+            AddItemCanselBtn.Text = "Cancel";
+            AddItemCanselBtn.UseVisualStyleBackColor = false;
+            AddItemCanselBtn.Click += AddItemCanselBtn_Click_1;
             // 
             // AddItemVehicleradioButton
             // 
             AddItemVehicleradioButton.AutoSize = true;
-            AddItemVehicleradioButton.Location = new Point(320, 16);
+            AddItemVehicleradioButton.Font = new Font("Segoe UI Semibold", 16.3018875F, FontStyle.Bold);
+            AddItemVehicleradioButton.Location = new Point(186, 12);
             AddItemVehicleradioButton.Name = "AddItemVehicleradioButton";
-            AddItemVehicleradioButton.Size = new Size(74, 24);
-            AddItemVehicleradioButton.TabIndex = 14;
+            AddItemVehicleradioButton.Size = new Size(114, 39);
+            AddItemVehicleradioButton.TabIndex = 13;
             AddItemVehicleradioButton.TabStop = true;
             AddItemVehicleradioButton.Text = "Vehicle";
             AddItemVehicleradioButton.UseVisualStyleBackColor = true;
             // 
-            // AddradioButton1
+            // AddItemPartRadioButton
             // 
-            AddradioButton1.AutoSize = true;
-            AddradioButton1.Location = new Point(399, 16);
-            AddradioButton1.Name = "AddradioButton1";
-            AddradioButton1.Size = new Size(52, 24);
-            AddradioButton1.TabIndex = 15;
-            AddradioButton1.TabStop = true;
-            AddradioButton1.Text = "Part";
-            AddradioButton1.UseVisualStyleBackColor = true;
+            AddItemPartRadioButton.AutoSize = true;
+            AddItemPartRadioButton.Font = new Font("Segoe UI Semibold", 16.3018875F, FontStyle.Bold);
+            AddItemPartRadioButton.Location = new Point(329, 12);
+            AddItemPartRadioButton.Name = "AddItemPartRadioButton";
+            AddItemPartRadioButton.Size = new Size(79, 39);
+            AddItemPartRadioButton.TabIndex = 14;
+            AddItemPartRadioButton.TabStop = true;
+            AddItemPartRadioButton.Text = "Part";
+            AddItemPartRadioButton.UseVisualStyleBackColor = true;
             // 
             // AddItemNameTex
             // 
             AddItemNameTex.AutoSize = true;
-            AddItemNameTex.Location = new Point(221, 51);
+            AddItemNameTex.Font = new Font("Segoe UI Semibold", 12.2264156F, FontStyle.Bold);
+            AddItemNameTex.Location = new Point(82, 75);
             AddItemNameTex.Name = "AddItemNameTex";
-            AddItemNameTex.Size = new Size(90, 20);
-            AddItemNameTex.TabIndex = 16;
-            AddItemNameTex.Text = "Item Name :";
+            AddItemNameTex.Size = new Size(61, 25);
+            AddItemNameTex.TabIndex = 15;
+            AddItemNameTex.Text = "Name";
             // 
-            // label1
+            // AddItemPriceTxt
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(221, 79);
-            label1.Name = "label1";
-            label1.Size = new Size(82, 20);
-            label1.TabIndex = 17;
-            label1.Text = "Item Price :";
+            AddItemPriceTxt.AutoSize = true;
+            AddItemPriceTxt.Font = new Font("Segoe UI Semibold", 12.2264156F, FontStyle.Bold);
+            AddItemPriceTxt.Location = new Point(90, 112);
+            AddItemPriceTxt.Name = "AddItemPriceTxt";
+            AddItemPriceTxt.Size = new Size(53, 25);
+            AddItemPriceTxt.TabIndex = 16;
+            AddItemPriceTxt.Text = "Price";
             // 
-            // AddItemPriceTex
+            // AddItemYearTex
             // 
-            AddItemPriceTex.AutoSize = true;
-            AddItemPriceTex.Location = new Point(221, 108);
-            AddItemPriceTex.Name = "AddItemPriceTex";
-            AddItemPriceTex.Size = new Size(48, 20);
-            AddItemPriceTex.TabIndex = 18;
-            AddItemPriceTex.Text = "Price :";
+            AddItemYearTex.AutoSize = true;
+            AddItemYearTex.Font = new Font("Segoe UI Semibold", 12.2264156F, FontStyle.Bold);
+            AddItemYearTex.Location = new Point(38, 154);
+            AddItemYearTex.Name = "AddItemYearTex";
+            AddItemYearTex.Size = new Size(105, 25);
+            AddItemYearTex.TabIndex = 17;
+            AddItemYearTex.Text = "Model Year";
             // 
             // AddItemBrandTex
             // 
             AddItemBrandTex.AutoSize = true;
-            AddItemBrandTex.Location = new Point(221, 141);
+            AddItemBrandTex.Font = new Font("Segoe UI Semibold", 12.2264156F, FontStyle.Bold);
+            AddItemBrandTex.Location = new Point(82, 192);
             AddItemBrandTex.Name = "AddItemBrandTex";
-            AddItemBrandTex.Size = new Size(55, 20);
-            AddItemBrandTex.TabIndex = 19;
-            AddItemBrandTex.Text = "Brand :";
+            AddItemBrandTex.Size = new Size(61, 25);
+            AddItemBrandTex.TabIndex = 18;
+            AddItemBrandTex.Text = "Brand";
             // 
             // AddItemTypeTex
             // 
             AddItemTypeTex.AutoSize = true;
-            AddItemTypeTex.Location = new Point(221, 175);
+            AddItemTypeTex.Font = new Font("Segoe UI Semibold", 12.2264156F, FontStyle.Bold);
+            AddItemTypeTex.Location = new Point(92, 237);
             AddItemTypeTex.Name = "AddItemTypeTex";
-            AddItemTypeTex.Size = new Size(47, 20);
-            AddItemTypeTex.TabIndex = 20;
-            AddItemTypeTex.Text = "Type :";
+            AddItemTypeTex.Size = new Size(51, 25);
+            AddItemTypeTex.TabIndex = 19;
+            AddItemTypeTex.Text = "Type";
             // 
             // AddItemPriceRangeTex
             // 
             AddItemPriceRangeTex.AutoSize = true;
-            AddItemPriceRangeTex.Location = new Point(218, 216);
+            AddItemPriceRangeTex.Font = new Font("Segoe UI Semibold", 12.2264156F, FontStyle.Bold);
+            AddItemPriceRangeTex.Location = new Point(33, 277);
             AddItemPriceRangeTex.Name = "AddItemPriceRangeTex";
-            AddItemPriceRangeTex.Size = new Size(94, 20);
-            AddItemPriceRangeTex.TabIndex = 21;
-            AddItemPriceRangeTex.Text = "Price Range :";
+            AddItemPriceRangeTex.Size = new Size(110, 25);
+            AddItemPriceRangeTex.TabIndex = 20;
+            AddItemPriceRangeTex.Text = "Price Range";
             // 
             // AddItemConditionTex
             // 
             AddItemConditionTex.AutoSize = true;
-            AddItemConditionTex.Location = new Point(221, 260);
+            AddItemConditionTex.Font = new Font("Segoe UI Semibold", 12.2264156F, FontStyle.Bold);
+            AddItemConditionTex.Location = new Point(48, 320);
             AddItemConditionTex.Name = "AddItemConditionTex";
-            AddItemConditionTex.Size = new Size(81, 20);
-            AddItemConditionTex.TabIndex = 22;
-            AddItemConditionTex.Text = "Condition :";
+            AddItemConditionTex.Size = new Size(95, 25);
+            AddItemConditionTex.TabIndex = 21;
+            AddItemConditionTex.Text = "Condition";
             // 
-            // label7
+            // AddItemFuelTex
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(221, 302);
-            label7.Name = "label7";
-            label7.Size = new Size(50, 20);
-            label7.TabIndex = 23;
-            label7.Text = "label1";
+            AddItemFuelTex.AutoSize = true;
+            AddItemFuelTex.Font = new Font("Segoe UI Semibold", 12.2264156F, FontStyle.Bold);
+            AddItemFuelTex.Location = new Point(52, 367);
+            AddItemFuelTex.Name = "AddItemFuelTex";
+            AddItemFuelTex.Size = new Size(91, 25);
+            AddItemFuelTex.TabIndex = 22;
+            AddItemFuelTex.Text = "Fuel Type";
             // 
-            // label8
+            // AddItemStatusTex
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(221, 338);
-            label8.Name = "label8";
-            label8.Size = new Size(50, 20);
-            label8.TabIndex = 24;
-            label8.Text = "label1";
+            AddItemStatusTex.AutoSize = true;
+            AddItemStatusTex.Font = new Font("Segoe UI Semibold", 12.2264156F, FontStyle.Bold);
+            AddItemStatusTex.Location = new Point(80, 416);
+            AddItemStatusTex.Name = "AddItemStatusTex";
+            AddItemStatusTex.Size = new Size(63, 25);
+            AddItemStatusTex.TabIndex = 23;
+            AddItemStatusTex.Text = "Status";
             // 
-            // label9
+            // AddItemMiageTex
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(221, 377);
-            label9.Name = "label9";
-            label9.Size = new Size(50, 20);
-            label9.TabIndex = 25;
-            label9.Text = "label1";
+            AddItemMiageTex.AutoSize = true;
+            AddItemMiageTex.Font = new Font("Segoe UI Semibold", 12.2264156F, FontStyle.Bold);
+            AddItemMiageTex.Location = new Point(29, 465);
+            AddItemMiageTex.Name = "AddItemMiageTex";
+            AddItemMiageTex.Size = new Size(114, 25);
+            AddItemMiageTex.TabIndex = 24;
+            AddItemMiageTex.Text = "Mileage  km";
             // 
-            // button1
+            // AddItemPicUploadbtn
             // 
-            button1.Location = new Point(611, 442);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 26;
-            button1.Text = "Save";
+            AddItemPicUploadbtn.BackColor = SystemColors.ActiveCaption;
+            AddItemPicUploadbtn.Font = new Font("Segoe UI", 10.18868F, FontStyle.Bold);
+            AddItemPicUploadbtn.Location = new Point(529, 454);
+            AddItemPicUploadbtn.Name = "AddItemPicUploadbtn";
+            AddItemPicUploadbtn.Size = new Size(129, 39);
+            AddItemPicUploadbtn.TabIndex = 25;
+            AddItemPicUploadbtn.Text = "Add Picture";
+            AddItemPicUploadbtn.UseVisualStyleBackColor = false;
+            AddItemPicUploadbtn.Click += AddItemPicUploadbtn_Click_1;
             // 
-            // pictureBox1
+            // AddItempicture
             // 
-            pictureBox1.Location = new Point(531, 151);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(165, 184);
-            pictureBox1.TabIndex = 27;
-            pictureBox1.TabStop = false;
+            AddItempicture.BorderStyle = BorderStyle.Fixed3D;
+            AddItempicture.Image = Properties.Resources.ImageCar;
+            AddItempicture.Location = new Point(378, 108);
+            AddItempicture.Name = "AddItempicture";
+            AddItempicture.Size = new Size(426, 337);
+            AddItempicture.SizeMode = PictureBoxSizeMode.StretchImage;
+            AddItempicture.TabIndex = 26;
+            AddItempicture.TabStop = false;
             // 
-            // label10
+            // AddItemDescriptionTxt
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(592, 338);
-            label10.Name = "label10";
-            label10.Size = new Size(50, 20);
-            label10.TabIndex = 28;
-            label10.Text = "label1";
+            AddItemDescriptionTxt.AutoSize = true;
+            AddItemDescriptionTxt.Font = new Font("Segoe UI Semibold", 12.2264156F, FontStyle.Bold);
+            AddItemDescriptionTxt.Location = new Point(35, 516);
+            AddItemDescriptionTxt.Name = "AddItemDescriptionTxt";
+            AddItemDescriptionTxt.Size = new Size(108, 25);
+            AddItemDescriptionTxt.TabIndex = 27;
+            AddItemDescriptionTxt.Text = "Description";
+            // 
+            // AddItemDescriptionBox
+            // 
+            AddItemDescriptionBox.Location = new Point(149, 516);
+            AddItemDescriptionBox.Multiline = true;
+            AddItemDescriptionBox.Name = "AddItemDescriptionBox";
+            AddItemDescriptionBox.ScrollBars = ScrollBars.Vertical;
+            AddItemDescriptionBox.Size = new Size(362, 158);
+            AddItemDescriptionBox.TabIndex = 28;
+            // 
+            // AddItemClearBtn
+            // 
+            AddItemClearBtn.BackColor = Color.Yellow;
+            AddItemClearBtn.Font = new Font("Segoe UI", 10.18868F, FontStyle.Bold);
+            AddItemClearBtn.Location = new Point(623, 570);
+            AddItemClearBtn.Name = "AddItemClearBtn";
+            AddItemClearBtn.Size = new Size(88, 37);
+            AddItemClearBtn.TabIndex = 29;
+            AddItemClearBtn.Text = "Clear";
+            AddItemClearBtn.UseVisualStyleBackColor = false;
+            AddItemClearBtn.Click += AddItemClearBtn_Click;
             // 
             // AdminAddItem
             // 
-            ClientSize = new Size(742, 506);
-            Controls.Add(label10);
-            Controls.Add(pictureBox1);
-            Controls.Add(button1);
-            Controls.Add(label9);
-            Controls.Add(label8);
-            Controls.Add(label7);
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(876, 718);
+            Controls.Add(AddItemClearBtn);
+            Controls.Add(AddItemDescriptionBox);
+            Controls.Add(AddItemDescriptionTxt);
+            Controls.Add(AddItempicture);
+            Controls.Add(AddItemPicUploadbtn);
+            Controls.Add(AddItemMiageTex);
+            Controls.Add(AddItemStatusTex);
+            Controls.Add(AddItemFuelTex);
             Controls.Add(AddItemConditionTex);
             Controls.Add(AddItemPriceRangeTex);
             Controls.Add(AddItemTypeTex);
             Controls.Add(AddItemBrandTex);
-            Controls.Add(AddItemPriceTex);
-            Controls.Add(label1);
+            Controls.Add(AddItemYearTex);
+            Controls.Add(AddItemPriceTxt);
             Controls.Add(AddItemNameTex);
-            Controls.Add(AddradioButton1);
+            Controls.Add(AddItemPartRadioButton);
             Controls.Add(AddItemVehicleradioButton);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(lblItemCode);
-            Controls.Add(AddItemNameBox);
-            Controls.Add(AddItemPriceBox);
-            Controls.Add(AddItemModelYearBox);
-            Controls.Add(AddItemBrandNamecmb);
+            Controls.Add(AddItemCanselBtn);
+            Controls.Add(AddItemSaveButton);
+            Controls.Add(AddItemMileageBoxcmb);
+            Controls.Add(AddItemStatuscmb);
+            Controls.Add(AddItemFuelTypecmb);
+            Controls.Add(AddItemConditioncmb);
+            Controls.Add(AddItemPriceRangecmb);
             Controls.Add(AddItemTypecmb);
-            Controls.Add(cmbPriceRange);
-            Controls.Add(cmbCondition);
-            Controls.Add(cmbFuelType);
-            Controls.Add(cmbStates);
-            Controls.Add(numMileage);
-            Controls.Add(btnSave);
-            Controls.Add(btnCancel);
+            Controls.Add(AddItemBrandNamecmb);
+            Controls.Add(AddItemModelYearBox);
+            Controls.Add(AddItemPriceBox);
+            Controls.Add(AddItemNameBox);
             Name = "AdminAddItem";
             Text = "Add Item";
-            Load += AdminAddItem_Load;
             ((System.ComponentModel.ISupportInitialize)AddItemPriceBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)AddItemModelYearBox).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numMileage).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)AddItemMileageBoxcmb).EndInit();
+            ((System.ComponentModel.ISupportInitialize)AddItempicture).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label lblItemCode;
         private TextBox AddItemNameBox;
         private NumericUpDown AddItemPriceBox;
         private NumericUpDown AddItemModelYearBox;
         private ComboBox AddItemBrandNamecmb;
         private ComboBox AddItemTypecmb;
-        private ComboBox cmbPriceRange;
-        private ComboBox cmbCondition;
-        private ComboBox cmbFuelType;
-        private ComboBox cmbStates;
-        private NumericUpDown numMileage;
-        private Button btnSave;
-        private Button btnCancel;
-        private DateTimePicker dateTimePicker1;
+        private ComboBox AddItemPriceRangecmb;
+        private ComboBox AddItemConditioncmb;
+        private ComboBox AddItemFuelTypecmb;
+        private ComboBox AddItemStatuscmb;
+        private NumericUpDown AddItemMileageBoxcmb;
+        private Button AddItemSaveButton;
+        private Button AddItemCanselBtn;
         private RadioButton AddItemVehicleradioButton;
-        private RadioButton AddradioButton1;
+        private RadioButton AddItemPartRadioButton;
         private Label AddItemNameTex;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private Label label7;
-        private Label label8;
-        private Label label9;
-        private Button button1;
-        private PictureBox pictureBox1;
-        private Label label10;
-        private Label AddItemPriceTex;
+        private Label AddItemPriceTxt;
+        private Label AddItemYearTex;
         private Label AddItemBrandTex;
         private Label AddItemTypeTex;
         private Label AddItemPriceRangeTex;
         private Label AddItemConditionTex;
+        private Label AddItemFuelTex;
+        private Label AddItemStatusTex;
+        private Label AddItemMiageTex;
+        private Button AddItemPicUploadbtn;
+        private PictureBox AddItempicture;
+        private Label AddItemDescriptionTxt;
+        private TextBox AddItemDescriptionBox;
+        private Button AddItemClearBtn;
     }
 }

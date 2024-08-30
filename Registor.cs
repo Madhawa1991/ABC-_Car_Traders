@@ -89,24 +89,41 @@ namespace ABC_Car_Traders
                 return;
             }
 
+
             try
             {
-                using (SqlConnection con = new SqlConnection("Data Source=DESKTOP-M9JEPR6\\VS_SERVER;Initial Catalog=\"ABC Car Traders\";Integrated Security=True;TrustServerCertificate=True"))
+                using (SqlConnection con = new SqlConnection("Data Source=DESKTOP-UJJH25V;Initial Catalog=\"ABC Car Traders\";Integrated Security=True;Encrypt=True;TrustServerCertificate=True"))
                 {
                     con.Open();
 
-                    // Insert user data into the database
-                    string query = "INSERT INTO [customer] (username, password, NIC, address, telephone, email, Role, [Registor date]) " +
-                                   "VALUES (@username, @password, @NIC, @address, @telephone, @email, @Role, @RegistorDate)";
+                    // Step 1: Get the last userID
+                    string getLastUserIDQuery = "SELECT TOP 1 userID FROM [customer] ORDER BY userID DESC";
+                    SqlCommand getLastUserIDCmd = new SqlCommand(getLastUserIDQuery, con);
+                    string lastUserID = (string)getLastUserIDCmd.ExecuteScalar();
+
+                    // Step 2: Increment the userID
+                    string newUserID = "User1"; // Default if no users exist
+
+                    if (!string.IsNullOrEmpty(lastUserID))
+                    {
+                        int lastNumber = int.Parse(Regex.Match(lastUserID, @"\d+").Value); // Extract the numeric part
+                        newUserID = "User" + (lastNumber + 1).ToString();
+                    }
+
+                    // Step 3: Insert user data into the database with the new userID
+                    string query = "INSERT INTO [customer] (userID, username, password, NIC, address, telephone, email, Role, [Registor Date], status) " +
+                                   "VALUES (@userID, @username, @password, @NIC, @address, @telephone, @email, @Role, @RegistorDate, @status)";
                     SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@userID", newUserID);
                     cmd.Parameters.AddWithValue("@username", RegistorNameTex.Text);
-                    cmd.Parameters.AddWithValue("@password", EncryptPassword(RegistorPasswordTex.Text)); // Encrypt the password 
+                    cmd.Parameters.AddWithValue("@password", EncryptPassword(RegistorPasswordTex.Text)); // Encrypt the password
                     cmd.Parameters.AddWithValue("@NIC", RegistorNICTex.Text);
-                    cmd.Parameters.AddWithValue("@address", (RegistorAddressTex.Text));
+                    cmd.Parameters.AddWithValue("@address", RegistorAddressTex.Text);
                     cmd.Parameters.AddWithValue("@telephone", RegistorTelephoneTex.Text);
                     cmd.Parameters.AddWithValue("@email", LoginEmailText.Text);
-                    cmd.Parameters.AddWithValue("@Role", "Customer");//default customer
-                    cmd.Parameters.AddWithValue("@RegistorDate", DateTime.Now);//curent date and time
+                    cmd.Parameters.AddWithValue("@Role", "Customer"); // Default role is Customer
+                    cmd.Parameters.AddWithValue("@RegistorDate", DateTime.Now); // Current date and time
+                    cmd.Parameters.AddWithValue("@status","Active");
 
                     cmd.ExecuteNonQuery();
 
@@ -121,7 +138,7 @@ namespace ABC_Car_Traders
             {
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+        } 
 
         private void RegistorShowPW_CheckedChanged(object sender, EventArgs e)
         {

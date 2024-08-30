@@ -16,5 +16,10 @@ namespace ABC_Car_Traders
         {
             InitializeComponent();
         }
+
+        private void AdminHome_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

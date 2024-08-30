@@ -13,7 +13,13 @@ namespace ABC_Car_Traders
         {
             InitializeComponent();
         }
-
+        public static class UserSession
+        {
+            // Static properties to store user information to access in any calss
+            public static string UserName { get; set; }
+            public static string UserID { get; set; }
+            public static DateTime LoginDate { get; set; }
+        }
         private void LoginForm_Load(object sender, EventArgs e)
         {
             // Perform any initialization tasks here if needed
@@ -43,43 +49,50 @@ namespace ABC_Car_Traders
             string hashedPassword = HashPassword(LoginPasswordBox.Text);
 
             // Connect to the database
-
             try
             {
-                using (SqlConnection con = new SqlConnection("Data Source=DESKTOP-M9JEPR6\\VS_SERVER;Initial Catalog=\"ABC Car Traders\";Integrated Security=True;TrustServerCertificate=True"))
+                using (SqlConnection con = new SqlConnection("Data Source=DESKTOP-UJJH25V;Initial Catalog=\"ABC Car Traders\";Integrated Security=True;Encrypt=True;TrustServerCertificate=True"))
                 {
                     con.Open();
 
-                    // Query to fetch role based on username and password
-                    string query = "SELECT [role] FROM [customer] WHERE username=@username AND password=@password";
+                    // Query to fetch role and userID based on username and password
+                    string query = "SELECT [role], UserID FROM [customer] WHERE status=@status AND username=@username AND password=@password";
                     SqlCommand cmd = new SqlCommand(query, con);
-                    cmd.Parameters.AddWithValue("@username", LoginNameBox.Text);
+                    cmd.Parameters.AddWithValue("@status", "Active"); // only active customers can login
+                    cmd.Parameters.AddWithValue("@username", LoginNameBox.Text); // check username
                     cmd.Parameters.AddWithValue("@password", hashedPassword); // Use the hashed password
 
-                    // Execute the query and get the role
-                    object result = cmd.ExecuteScalar();
+                    // Execute the query and get the role and userID
+                    SqlDataReader reader = cmd.ExecuteReader();
 
-                    if (result != null)
+                    if (reader.Read())
                     {
-                        string role = result.ToString();
+                        string role = reader["role"].ToString();
+                        string userID = reader["UserID"].ToString();
+
+                        // Set the session variables
+                        UserSession.UserName = LoginNameBox.Text;
+                        UserSession.UserID = userID;
+                        UserSession.LoginDate = DateTime.Now;
 
                         // Display message based on role
                         if (role == "Customer")
                         {
+                            this.Hide();//hide until exit form user dash board
                             MessageBox.Show("Welcome, Customer!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            CustomerDashBoard customerDashBoard = new CustomerDashBoard();
+                            customerDashBoard.ShowDialog();
                         }
                         else if (role == "Admin")
                         {
+                            this.Hide();//hide until exit form admin dash board
                             MessageBox.Show("Welcome, Admin!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            //after poup message load admin page
                             AdminHome adminForm = new AdminHome();
                             adminForm.ShowDialog();
-                            this.Close();
-
-
                         }
                         else
                         {
+                            this.Hide();//if not user or admin, this for other user , now we dont have aditional feature 
                             MessageBox.Show("Welcome, User!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
@@ -88,6 +101,7 @@ namespace ABC_Car_Traders
                         // Login failed message
                         MessageBox.Show("Login unsuccessful. Please check your username and password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+
                 }
             }
             catch (SqlException ex)
@@ -100,28 +114,13 @@ namespace ABC_Car_Traders
             }
         }
 
-        private void CancelButton_Click(object sender, EventArgs e)
-        {
-            // Close the login form
-            this.Close();
-        }
-
         private void ShowPasswordCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             // Toggle password visibility
             LoginPasswordBox.PasswordChar = ShowPasswordCheckBox.Checked ? '\0' : '*';
         }
 
-        private void PasswordBox_TextChanged(object sender, EventArgs e)
-        {
-            TextBox passwordBox = sender as TextBox;
-
-            if (passwordBox != null)
-            {
-                // Set the PasswordChar property to mask the characters with '*'
-                passwordBox.PasswordChar = '*';
-            }
-        }
+    
 
         private void RegisterLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -137,11 +136,10 @@ namespace ABC_Car_Traders
 
         private void LoginChangePWLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide(); // Hide the current login form
-
+           this.Hide();
             ChangePassword changePassword = new ChangePassword();
-            changePassword.ShowDialog();
-            this.Show();
+            changePassword.Show();
+
         }
 
 
@@ -157,15 +155,16 @@ namespace ABC_Car_Traders
 
         private void CancelButton_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+            // Closes the entire application
+            Application.Exit();
         }
+
 
         private void TemporyPagetestButon_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AdminAddItem adminAddItem = new AdminAddItem();
+            CustomerTrackOrderdItems adminAddItem = new CustomerTrackOrderdItems();
             adminAddItem.ShowDialog();
-            this.Show();
         }
     }
 }

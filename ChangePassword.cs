@@ -23,6 +23,8 @@ namespace ABC_Car_Traders
         private void ChangePWexit_Click(object sender, EventArgs e)
         {
             this.Close();
+            LoginForm loginForm = new LoginForm();
+            loginForm.ShowDialog();
         }
 
         private void ChangePWButton_Click(object sender, EventArgs e)
@@ -71,7 +73,7 @@ namespace ABC_Car_Traders
             // Connect to DB
             try
             {
-                using (SqlConnection con = new SqlConnection("Data Source=DESKTOP-M9JEPR6\\VS_SERVER;Initial Catalog=\"ABC Car Traders\";Integrated Security=True;TrustServerCertificate=True"))
+                using (SqlConnection con = new SqlConnection("Data Source=DESKTOP-UJJH25V;Initial Catalog=\"ABC Car Traders\";Integrated Security=True;Encrypt=True;TrustServerCertificate=True"))
                 {
                     con.Open();
 

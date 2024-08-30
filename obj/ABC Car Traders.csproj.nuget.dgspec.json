@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\source\\repos\\ABC Car Traders\\ABC Car Traders.csproj": {}
+    "C:\\Users\\User\\source\\repos\\Madhawa1991\\ABC-_Car_Traders\\ABC Car Traders.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\source\\repos\\ABC Car Traders\\ABC Car Traders.csproj": {
+    "C:\\Users\\User\\source\\repos\\Madhawa1991\\ABC-_Car_Traders\\ABC Car Traders.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\source\\repos\\ABC Car Traders\\ABC Car Traders.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\Madhawa1991\\ABC-_Car_Traders\\ABC Car Traders.csproj",
         "projectName": "ABC Car Traders",
-        "projectPath": "C:\\Users\\HP\\source\\repos\\ABC Car Traders\\ABC Car Traders.csproj",
-        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\source\\repos\\ABC Car Traders\\obj\\",
+        "projectPath": "C:\\Users\\User\\source\\repos\\Madhawa1991\\ABC-_Car_Traders\\ABC Car Traders.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\Madhawa1991\\ABC-_Car_Traders\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -46,6 +50,14 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "dependencies": {
+            "ADGV": {
+              "target": "Package",
+              "version": "[0.1.0.10, )"
+            },
+            "DG.AdvancedDataGridView": {
+              "target": "Package",
+              "version": "[1.2.29301.14, )"
+            },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[5.2.1, )"
@@ -53,6 +65,10 @@
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.6, )"
+            },
+            "byMarc.Net2.WinControls.DataGridViewExControl": {
+              "target": "Package",
+              "version": "[2017.306.4, )"
             }
           },
           "imports": [
@@ -74,7 +90,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

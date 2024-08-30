@@ -10,7 +10,34 @@
     <Compile Update="AdminHome.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="AdminManageCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AdminManageItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CustomerDashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CustomerFavarioutItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CustomerItemSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CustomerTrackConfirmedItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CustomerTrackOrderdItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CustomerTrackOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CustomerRejectOrderView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Login.cs">
